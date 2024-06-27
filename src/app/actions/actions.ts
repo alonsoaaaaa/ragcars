@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 const credentialsJson = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
 const tempFilePath = path.join(__dirname, "google-credentials.json"); //esto se hace para que railway pueda leer la variable
-// fs.writeFileSync(tempFilePath, credentialsJson!); //NOTA: En local podemos leerlo desde el archivo, en produccion tenemos que hacer esto
+fs.writeFileSync(tempFilePath, credentialsJson!); //NOTA: En local podemos leerlo desde el archivo, en produccion tenemos que hacer esto
 import { VertexAI, Part } from "@google-cloud/vertexai";
 
 export async function createChatAnswer(
@@ -19,9 +19,9 @@ export async function createChatAnswer(
     project: projectId,
     location: location,
     googleAuthOptions: {
-      // keyFilename: tempFilePath,
-      keyFilename:
-        "C:\\Users\\52551\\Desktop\\proyectos\\omodacars\\src\\ornate-ray-424712-r8-14ad3c627e2a.json",
+      keyFilename: tempFilePath,
+      // keyFilename:
+      //   "C:\\Users\\52551\\Desktop\\proyectos\\omodacars\\src\\ornate-ray-424712-r8-14ad3c627e2a.json",
       // NOTA: cambiar esto por tempFilePath en produccion
       scopes: ["https://www.googleapis.com/auth/cloud-platform"],
     },
