@@ -107,6 +107,7 @@ export default function Home() {
               className="bg-blue-400 hover:bg-blue-300 w-fit"
               type="submit"
               value={"Hacer pregunta"}
+              disabled={submittingAns}
             />
           </form>
           <form
@@ -125,6 +126,7 @@ export default function Home() {
             <Input
               type="submit"
               value={"Subir imágen"}
+              disabled={submittingAns}
               className="w-fit bg-green-600 hover:bg-green-500"
             />
             {/* )} */}
