@@ -68,13 +68,13 @@ export default function Home() {
           <div id="chatContext" className="fñex flex-col pb-4">
             <div className="flex flex-col justify-center items-center text-center content-center">
               <h1 className="flex text-xl flex-wrap font-semibold pt-4 text-pretty">
-                Haz preguntas o sube una imágen del auto que quieres identificar
-                y deja que nuestra Inteligencia Aritificial especializada en la
-                industria automotriz resuelve las dudas que tengas sobre los
-                autos.
+                Haz preguntas a nuetra Intelgencia Artificial especializada en
+                el catálogo de Hyundai y deja que esta te responda
               </h1>
               <BrainIcon fill="pink" width={50} height={50} />
+              <Image src={"/Hyundai.svg"} alt="" width={250} height={250} />
             </div>
+
             <div className="flex flex-col items-start">
               {chatContext.map((message) => {
                 message = parseText(message) as any;
@@ -98,7 +98,7 @@ export default function Home() {
               className="w-[50vw]"
               id="textinp"
               onChange={(e) => setUserMessage(e.target.value)}
-              placeholder="ej: Precio de Acura MDX 2019"
+              placeholder="ej: Qué precio tiene un Greta del 2020?"
               // placeholder="Chevrolet Camaro 2023"
             />
             <Input
