@@ -14,7 +14,6 @@ export async function createChatAnswer(
   //   model = "gemini-1.5-flash-001"
   model = "gemini-1.5-pro-001"
 ) {
-  console.log("hola 4");
   // Initialize Vertex with your Cloud project and location
   const vertexAI = new VertexAI({
     project: projectId,

@@ -37,9 +37,7 @@ export default function Home() {
   }
   const handleImgSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("hola 1");
     let parsedImg = await createEncodedImg(image!);
-    // console.log("hola 3");
     setSubmittingAns(true);
     let answer = await createChatAnswer(parsedImg as string, currCtx.current);
     setSubmittingAns(false);
