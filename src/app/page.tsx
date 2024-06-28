@@ -120,7 +120,7 @@ export default function Home() {
               <div>
                 <Input
                   type="submit"
-                  value={"Subir imágen"}
+                  value={"Subir imágen...."}
                   className="w-fit bg-green-600"
                 />
               </div>
