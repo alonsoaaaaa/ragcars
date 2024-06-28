@@ -7,6 +7,7 @@ import { createChatAnswer } from "./actions/actions";
 import { createEncodedImg } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import FileInput from "@/components/ui/file-input";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [chatContext, setChatContext] = useState([" "] as string[]);
@@ -36,7 +37,9 @@ export default function Home() {
   }
   const handleImgSubmit = async (e: any) => {
     e.preventDefault();
+    console.log("hola 1");
     let parsedImg = await createEncodedImg(image!);
+    // console.log("hola 3");
     setSubmittingAns(true);
     let answer = await createChatAnswer(parsedImg as string, currCtx.current);
     setSubmittingAns(false);
@@ -107,7 +110,7 @@ export default function Home() {
             />
           </form>
           <form
-            onSubmit={(e) => handleImgSubmit(e)}
+            onSubmit={async (e) => handleImgSubmit(e)}
             className="flex flex-col max-md:justify-start content-center items-center mt-5 gap-3"
           >
             <div className="flex-col gap-3 items-center ">
@@ -117,15 +120,16 @@ export default function Home() {
                   onChange={(e: any) => setImage(e.target.files?.[0])}
                 />
               </div>
-              <div>
-                <Input
-                  type="submit"
-                  value={"Subir imágen...."}
-                  className="w-fit bg-green-600"
-                />
-              </div>
+            </div>
+            {/* {image && ( */}
+            <Input
+              type="submit"
+              value={"Subir imágen"}
+              className="w-fit bg-green-600 hover:bg-green-500"
+            />
+            {/* )} */}
 
-              {/* <Input
+            {/* <Input
                 type="file"
                 accept="image/jpg, image/jpeg"
                 name="file"
@@ -135,7 +139,6 @@ export default function Home() {
                 required
                 className="w-fit"
               /> */}
-            </div>
             {/* <Input
               className="bg-blue-300 w-fit"
               type="submit"
