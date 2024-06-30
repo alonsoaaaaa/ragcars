@@ -82,15 +82,15 @@ export default function Home() {
                   src={"/alitas1.png"}
                   alt=""
                   width={300}
-                  height={250}
-                  className="rounded-lg"
+                  height={220}
+                  className="rounded-lg w-auto"
                 />
                 <Image
                   src={"/alitas2.png"}
                   alt=""
                   width={300}
                   height={250}
-                  className="rounded-lg"
+                  className="rounded-lg w-auto"
                 />
               </div>
               <h1 className="flex text-xl flex-wrap font-semibold pt-4 text-pretty">
