@@ -1,5 +1,5 @@
 "use client";
-import { BrainIcon, PointerIcon } from "lucide-react";
+import { BrainIcon, Drumstick, PointerIcon } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
@@ -63,16 +63,41 @@ export default function Home() {
   };
   return (
     <div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center bg-orange-500">
         <div className="flex flex-col flex-wrap justify-center items-center max-w-[1100px] content-center ">
           <div id="chatContext" className="fñex flex-col pb-4">
-            <div className="flex flex-col justify-center items-center text-center content-center">
+            <div className="flex flex-col gap-4 pt-10 justify-center items-center text-center content-center">
+              <div>
+                <Image
+                  src={"/aliicon.png"}
+                  alt=""
+                  width={300}
+                  height={300}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="flex gap-4">
+                {/* <Image src={"/Hyundai.svg"} alt="" width={250} height={250} /> */}
+                <Image
+                  src={"/alitas1.png"}
+                  alt=""
+                  width={300}
+                  height={250}
+                  className="rounded-lg"
+                />
+                <Image
+                  src={"/alitas2.png"}
+                  alt=""
+                  width={300}
+                  height={250}
+                  className="rounded-lg"
+                />
+              </div>
               <h1 className="flex text-xl flex-wrap font-semibold pt-4 text-pretty">
-                Haz preguntas a nuetra Intelgencia Artificial especializada en
-                el catálogo de Hyundai y deja que esta te responda
+                Haz preguntas a nuestro asistente de alitas del barrio y el te
+                atenderá con gusto...
+                <Drumstick fill="orange" width={50} height={50} />
               </h1>
-              <BrainIcon fill="pink" width={50} height={50} />
-              <Image src={"/Hyundai.svg"} alt="" width={250} height={250} />
             </div>
 
             <div className="flex flex-col items-start">
@@ -98,11 +123,11 @@ export default function Home() {
               className="w-[50vw]"
               id="textinp"
               onChange={(e) => setUserMessage(e.target.value)}
-              placeholder="ej: Qué precio tiene un Greta del 2020?"
+              placeholder="ej: Qué precio tiene la orden de alitas?"
               // placeholder="Chevrolet Camaro 2023"
             />
             <Input
-              className="bg-blue-400 hover:bg-blue-300 w-fit"
+              className="bg-orange-700 hover:bg-orange-800 w-fit"
               type="submit"
               value={"Hacer pregunta"}
               disabled={submittingAns}
@@ -114,19 +139,19 @@ export default function Home() {
           >
             <div className="flex-col gap-3 items-center ">
               <div className="flex gap-3">
-                <FileInput
+                {/* <FileInput
                   accept=".png,.jpg,.jpeg"
                   onChange={(e: any) => setImage(e.target.files?.[0])}
-                />
+                /> */}
               </div>
             </div>
             {/* {image && ( */}
-            <Input
+            {/* <Input
               type="submit"
               value={"Subir imágen"}
               disabled={submittingAns}
               className="w-fit bg-green-600 hover:bg-green-500"
-            />
+            /> */}
             {/* )} */}
 
             {/* <Input
